@@ -1,19 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'screens/Page1/Page1.dart';
+import 'screens/Page1/Page1Binding.dart';
+import 'screens/Page2/Page2.dart';
+import 'screens/Page2/Page2Binding.dart';
+import 'screens/home/Home.dart';
+import 'screens/home/HomeBinding.dart';
 
-void main() => runApp(MaterialApp(home: Home()));
 
-class Home extends StatelessWidget {
-  var count = 0.obs;
-
-  @override
-  Widget build(context) => Scaffold(
-      appBar: AppBar(title: Text("counter")),
-      body: Center(
-        child: Obx(() => Text("$count")),
+void main() {
+  runApp(GetMaterialApp(
+    navigatorKey: Get.key,
+    initialRoute: '/home',
+    getPages: [
+      GetPage(
+        name: '/home',
+        page: () => Home(),
+        binding: HomeBinding(),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () => count++,
-      ));
+      GetPage(
+        name: '/page1',
+        page: () => Page1(),
+        binding: Page1Binding(),
+      ),
+      GetPage(
+        name: '/page2',
+        page: () => Page2(),
+        binding: Page2Binding(),
+      ),
+    ],
+  ));
 }
+

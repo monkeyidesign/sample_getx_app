@@ -14,7 +14,7 @@ import 'screens/home/HomeBinding.dart';
 void main() {
   runApp(GetMaterialApp(
     navigatorKey: Get.key,
-    initialRoute: AppRoutes.home,
+    initialRoute: AppRoutes.snackbar,
     getPages: [
       GetPage(
         name: AppRoutes.home,

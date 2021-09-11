@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class SnackbarController extends GetxController {
-  final title = 'Snackbar';
+  final title = 'Snackbar Page';
 
   @override
   void onInit() {
